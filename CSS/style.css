@@ -1,0 +1,192 @@
+/* Define as regras básicas de toda a página. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px;
+    background-color: #f3eee6;
+    color: #29251f;
+    font-family: Arial, sans-serif;
+}
+
+/* Organiza a marca e os links na mesma linha. */
+.cabecalho {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.cabecalho a {
+    color: #29251f;
+    text-decoration: none;
+}
+
+.marca {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Cartões de apresentação e coleção. */
+.apresentacao,
+.colecao {
+    width: 100%;
+    margin: 48px auto 0;
+    padding: 56px;
+    border: 1px solid #e2d9cc;
+    border-radius: 16px;
+    background-color: #fffdf9;
+    box-shadow: 0 18px 50px rgba(41, 37, 31, 0.08);
+}
+
+.apresentacao {
+    max-width: 720px;
+    text-align: center;
+}
+
+.colecao {
+    max-width: 1000px;
+}
+
+.etiqueta {
+    color: #806b4e;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 20px 0;
+    color: #29251f;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+p {
+    color: #625c53;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.introducao-colecao {
+    margin-bottom: 28px;
+}
+
+/* O grid distribui os cartões em colunas iguais. */
+.lista-produtos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.produto {
+    overflow: hidden;
+    border: 1px solid #e7dfd4;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+/* Blocos coloridos são espaços reservados para fotos dos produtos. */
+.produto__imagem {
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.produto__imagem--camiseta {
+    background: linear-gradient(135deg, #c9b59b, #88735c);
+}
+
+.produto__imagem--camisa {
+    background: linear-gradient(135deg, #a8b4a0, #596c5a);
+}
+
+.produto__imagem--calca {
+    background: linear-gradient(135deg, #8995a8, #48546b);
+}
+
+.produto h3,
+.produto .preco {
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+.produto h3 {
+    margin-top: 16px;
+    margin-bottom: 4px;
+    font-size: 1rem;
+}
+
+.produto .preco {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #806b4e;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 14px 20px;
+    border-radius: 6px;
+    background-color: #29251f;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.botao:hover {
+    background-color: #51483b;
+}
+
+@media (max-width: 760px) {
+    .lista-produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 16px;
+    }
+
+    .cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .apresentacao,
+    .colecao {
+        margin-top: 28px;
+        padding: 32px 24px;
+    }
+
+    .lista-produtos {
+        grid-template-columns: 1fr;
+    }
+}
